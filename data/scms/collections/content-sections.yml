@@ -1,0 +1,33 @@
+name: content-sections
+label: Content section index pages
+collection_type: folder
+description: ""
+folder: content
+publish: false
+hide: false
+delete: true
+editor: null
+summary: ""
+fields:
+  - field_type: import
+    import: field hugo-content-title
+    extend: null
+  - field_type: import
+    import: field hugo-content-body
+    extend: null
+filter: null
+format: yaml-frontmatter
+extension: ""
+frontmatter_delimiter: ""
+create: true
+preview_path: "{{slug}}"
+preview_path_date_field: ""
+public_folder: ""
+label_singular: Content section index page
+identifier_field: title
+path: "{{slug}}/_index"
+sortable_fields: []
+view_filters: []
+view_groups: []
+media_folder: ""
+nested: null

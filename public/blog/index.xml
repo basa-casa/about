@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog Posts on About Basa Casa</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blog Posts on About Basa Casa</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Sep 2024 05:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The creation of basa-casa/admin</title>
+      <link>http://localhost:1313/blog/creation-basa-casa-admin-cms-generator/</link>
+      <pubDate>Fri, 27 Sep 2024 05:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/creation-basa-casa-admin-cms-generator/</guid>
+      <description>&lt;h2 id=&#34;a-module-story&#34;&gt;A Module Story&lt;/h2&gt;&#xA;&lt;p&gt;One day I discovered NetlifyCMS. I needed something like it at the time, and when configuring it stumbled across the New Dynamic&amp;rsquo;s module for splitting config files with a simple import function during a hugo build. It worked great, and I started creating a CMS that made the CMS, collection, and field files.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

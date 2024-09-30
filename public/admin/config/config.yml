@@ -1,0 +1,1300 @@
+backend:
+  branch: main
+  name: github
+  repo: basa-casa/admin
+collections:
+- collection_type: files
+  description: Manage Hugo configuration in directories of .yml files per config object.
+  files:
+  - delete: false
+    fields:
+    - default: tags
+      field_type: string
+      name: tag
+      required: false
+      widget: string
+    - default: categories
+      field_type: string
+      name: category
+      required: false
+      widget: string
+    - field_type: string
+      name: field
+      required: false
+      widget: string
+    file: config/_default/config.yml
+    label: config/_default/config.yml
+    name: default-config
+    type: file
+  - delete: false
+    fields:
+    - default: tags
+      field_type: string
+      name: tag
+      required: false
+      widget: string
+    - default: categories
+      field_type: string
+      name: category
+      required: false
+      widget: string
+    - field_type: string
+      name: field
+      required: false
+      widget: string
+    file: config/_default/taxonmies.yml
+    label: Taxonomies
+    name: Taxonomies
+    type: file
+  - delete: false
+    fields:
+    - fields:
+      - field_type: list
+        name: aliases
+        widget: list
+      name: aliases
+    file: config/_default/cascade.yml
+    label: Cascade
+    name: Cascade
+    type: file
+  - delete: false
+    fields:
+    - hint: Merge this configuration object from themes.
+      label: _merge
+      name: _merge
+      options:
+      - label: none - No merge
+        value: none
+      - label: shallow - Adds values for only new keys
+        value: shallow
+      - label: deep - Add values for new keys, and merge existing
+        value: deep
+      required: false
+      widget: select
+    - field_type: list
+      label: date
+      name: date
+      required: false
+      widget: list
+    - field_type: list
+      label: expiryDate
+      name: expiryDate
+      required: false
+      widget: list
+    - field_type: list
+      label: lastmod
+      name: lastmod
+      required: false
+      widget: list
+    - field_type: list
+      label: publishDate
+      name: publishDate
+      required: false
+      widget: list
+    file: config/_default/frontmatter.yml
+    label: Frontmatter
+    name: Frontmatter
+    type: file
+  - delete: false
+    fields:
+    - hint: Merge this configuration object from themes.
+      label: _merge
+      name: _merge
+      options:
+      - label: none - No merge
+        value: none
+      - label: shallow - Adds values for only new keys
+        value: shallow
+      - label: deep - Add values for new keys, and merge existing
+        value: deep
+      required: false
+      widget: select
+    - field_type: select
+      hint: The default value is Box. See https://github.com/disintegration/imaging.
+      label: resample Filter
+      name: resampleFilter
+      options:
+      - NearestNeighbor
+      - Box
+      - Linear
+      - Hermite
+      - MitchellNetravali
+      - CatmullRom
+      - BSpline
+      - Gaussian
+      - Lanczos
+      - Hann
+      - Hamming
+      - Blackman
+      - Bartlett
+      - Welch
+      - Cosine
+      required: false
+      widget: select
+    - field_type: number
+      label: quality
+      name: quality
+      required: false
+      widget: number
+    - field_type: select
+      hint: |-
+        Default hint about what type of image. Currently only used for WebP encoding.
+        Default is "photo".
+      label: hint
+      name: hint
+      options:
+      - picture
+      - photo
+      - drawing
+      - icon
+      - text
+      required: false
+      widget: select
+    - field_type: select
+      hint: |-
+        Anchor used when cropping pictures.
+        Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+        Smart Cropping is content aware and tries to find the best crop for each image. Default is "photo".
+      label: anchor
+      name: anchor
+      options:
+      - smart
+      - center
+      - topLeft
+      - Top
+      - TopRight
+      - Left
+      - Right
+      - bottomLeft
+      - bottom
+      - bottomRight
+      required: false
+      widget: select
+    - field_type: color
+      hint: |-
+        Default background color.
+        Hugo will preserve transparency for target formats that supports it, but will fall back to this color for JPEG.
+        Expects a standard HEX color string with 3 or 6 digits.
+        See https://www.google.com/search?q=color+picker
+      label: bg Color
+      name: bgColor
+      required: false
+      widget: color
+    - collapsed: true
+      field_type: object
+      fields:
+      - field_type: boolean
+        hint: Hugo extracts the "photo taken" date/time into .Date by default. Set
+          this to true to turn it off.
+        label: disableDate
+        name: disableDate
+        required: false
+        widget: boolean
+      - field_type: boolean
+        hint: |-
+          Hugo extracts the "photo taken where" (GPS latitude and longitude) into
+          .Long and .Lat. Set this to true to turn it off.
+        label: disableLatLong
+        name: disableLatLong
+        required: false
+        widget: boolean
+      - field_type: string
+        hint: Regexp matching the Exif fields you want to exclude. This may be easier
+          to use than IncludeFields above, depending on what you want.
+        label: excludeFields
+        name: excludeFields
+        required: false
+        widget: string
+      - field_type: string
+        hint: Regexp matching the fields you want to Exclude from the (massive) set
+          of Exif info available. As we cache this info to disk, this is for performance
+          and disk space reasons more than anything. If you want it all, put ".*"
+          in this config setting. Note that if neither this or ExcludeFields is set,
+          Hugo will return a small default set.
+        label: includeFields
+        name: includeFields
+        required: false
+        widget: string
+      label: exif
+      name: exif
+      required: false
+      widget: object
+    file: config/_default/imaging.yml
+    label: Imaging
+    name: Imaging
+    type: file
+  - delete: false
+    fields:
+    - hint: Merge this configuration object from themes.
+      label: _merge
+      name: _merge
+      options:
+      - label: none - No merge
+        value: none
+      - label: shallow - Adds values for only new keys
+        value: shallow
+      - label: deep - Add values for new keys, and merge existing
+        value: deep
+      required: false
+      widget: select
+    - field_type: select
+      label: default Markdown Handler
+      multiple: false
+      name: defaultMarkdownHandler
+      options:
+      - goldmark
+      required: false
+      widget: select
+    - field_type: object
+      fields:
+      - collapsed: true
+        field_type: object
+        fields:
+        - field_type: boolean
+          label: definitionList
+          name: definitionList
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: footnote
+          name: footnote
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: linkify
+          name: linkify
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: strikethrough
+          name: strikethrough
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: table
+          name: table
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: taskList
+          name: taskList
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: typographer
+          name: typographer
+          required: false
+          widget: boolean
+        label: extensions
+        name: extensions
+        required: true
+        widget: object
+      - collapsed: true
+        field_type: object
+        fields:
+        - field_type: boolean
+          label: autoHeadingID
+          name: autoHeadingID
+          required: false
+          widget: boolean
+        - field_type: select
+          label: autoHeadingIDType
+          name: autoHeadingIDType
+          options:
+          - github
+          - github-ascii
+          - blackfriday
+          required: false
+          widget: select
+        - colleapsed: true
+          field_type: object
+          fields:
+          - field_type: boolean
+            label: block
+            name: block
+            required: false
+            widget: boolean
+          - field_type: boolean
+            label: title
+            name: title
+            required: false
+            widget: boolean
+          name: attribute
+          required: false
+          widget: object
+        label: parser
+        name: parser
+        required: true
+        widget: object
+      - collapsed: true
+        field_type: object
+        fields:
+        - field_type: boolean
+          label: hardWraps
+          name: hardWraps
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: unsafe
+          name: unsafe
+          required: false
+          widget: boolean
+        - field_type: boolean
+          label: xhtml
+          name: xhtml
+          required: false
+          widget: boolean
+        label: renderer
+        name: renderer
+        required: true
+        widget: object
+      hint: See https://gohugo.io/getting-started/configuration-markup.
+      label: goldmark
+      name: goldmark
+      required: false
+      widget: object
+    - field_type: object
+      fields:
+      - field_type: boolean
+        label: anchorLineNos
+        name: anchorLineNos
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: codeFences
+        name: codeFences
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: guessSyntax
+        name: guessSyntax
+        required: false
+        widget: boolean
+      - field_type: string
+        label: hl_Lines
+        name: hl_Lines
+        required: false
+        widget: string
+      - field_type: string
+        label: lineAnchors
+        name: lineAnchors
+        required: false
+        widget: string
+      - field_type: number
+        label: lineNoStart
+        min: 1
+        name: lineNoStart
+        required: false
+        value_type: int
+        widget: number
+      - field_type: boolean
+        label: lineNos
+        name: lineNos
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: lineNumbersInTable
+        name: lineNumbersInTable
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: noClasses
+        name: noClasses
+        required: false
+        widget: boolean
+      - field_type: select
+        hint: See https://xyproto.github.io/splash/docs/all.html.
+        label: style
+        name: style
+        options:
+        - monokai
+        - abap
+        - algol
+        - algol_nu
+        - api
+        - arduino
+        - autumn
+        - borland
+        - bw
+        - colorful
+        - dracula
+        - emacs
+        - friendly
+        - fruity
+        - github
+        - igor
+        - lovelace
+        - manni
+        - monokailight
+        - murphy
+        - native
+        - paraiso-dark
+        - paraiso-light
+        - pastie
+        - perldoc
+        - pygments
+        - rainbow_dash
+        - rrt
+        - solarized-dark
+        - solarized-dark256
+        - solarized-light
+        - swapoff
+        - tango
+        - trac
+        - vim
+        - vs
+        - xcode
+        required: false
+        widget: select
+      - field_type: number
+        label: tabWidth
+        min: 2
+        name: tabWidth
+        required: false
+        step: 2
+        value_type: int
+        widget: number
+      hint: 'Blackfriday was Hugo’s default Markdown rendering engine, now replaced
+        with Goldmark. But you can still use it: Just set defaultMarkdownHandler to
+        blackfriday in your top level markup config.'
+      label: highlight
+      name: highlight
+      required: false
+      widget: object
+    - field_type: object
+      fields:
+      - field_type: number
+        hint: The heading level, inclusive, to stop render the table of contents.
+        label: endLevel
+        name: endLevel
+        required: false
+        widget: number
+      - field_type: boolean
+        hint: Whether or not to generate an ordered list instead of an unordered list.
+        label: ordered
+        name: ordered
+        required: false
+        widget: boolean
+      - field_type: number
+        hint: The heading level, values starting at 1 (h1), to start render the table
+          of contents.
+        label: startLevel
+        min: 1
+        name: startLevel
+        required: false
+        step: 1
+        value_type: int
+        widget: number
+      hint: 'These settings only works for the Goldmark renderer:'
+      label: table Of Contents
+      name: tableOfContents
+      required: false
+      widget: object
+    file: config/_default/markup.yml
+    label: Markup
+    name: Markup
+    type: file
+  - delete: false
+    fields:
+    - hint: Merge this configuration object from themes.
+      label: _merge
+      name: _merge
+      options:
+      - label: none - No merge
+        value: none
+      - label: shallow - Adds values for only new keys
+        value: shallow
+      - label: deep - Add values for new keys, and merge existing
+        value: deep
+      required: false
+      widget: select
+    file: config/_default/mediaTypes.yml
+    label: mediatypes
+    name: mediatypes
+    type: file
+  - delete: false
+    fields:
+    - label: title
+      name: title
+      required: false
+      widget: string
+    - label: weight
+      name: weight
+      required: false
+      step: 10
+      widget: number
+    - label: url
+      name: url
+      required: false
+      widget: string
+    - label: page Ref
+      name: pageRef
+      required: false
+      widget: string
+    - label: identifier
+      name: identifier
+      required: false
+      widget: string
+    - label: pre
+      name: pre
+      required: false
+      widget: string
+    - label: post
+      name: post
+      required: false
+      widget: string
+    file: config/_default/menus.yml
+    label: Menus
+    name: Menus
+    type: file
+  - delete: false
+    fields:
+    - label: disableCSS
+      name: disableCSS
+      required: false
+      widget: boolean
+    - label: disableHTML
+      name: disableHTML
+      required: false
+      widget: boolean
+    - label: disableJS
+      name: disableJS
+      required: false
+      widget: boolean
+    - label: disableJSON
+      name: disableJSON
+      required: false
+      widget: boolean
+    - label: disableSVG
+      name: disableSVG
+      required: false
+      widget: boolean
+    - label: disableXML
+      name: disableXML
+      required: false
+      widget: boolean
+    - label: minifyOutput
+      name: minifyOutput
+      required: false
+      widget: boolean
+    - collapsed: true
+      fields:
+      - fields:
+        - label: keepCSS2
+          name: keepCSS2
+          required: false
+          widget: boolean
+        - hint: Precision number of significant digits to preserve for numbers, 0
+            means no trimming.
+          label: precision
+          name: precision
+          required: false
+          widget: number
+        label: css
+        name: css
+        required: false
+        widget: object
+      - fields:
+        - label: keepComments
+          name: keepComments
+          required: false
+          widget: boolean
+        - label: keepConditionalComments
+          name: keepConditionalComments
+          required: false
+          widget: boolean
+        - label: keepDefaultAttrVals
+          name: keepDefaultAttrVals
+          required: false
+          widget: boolean
+        - label: keepDocumentTags
+          name: keepDocumentTags
+          required: false
+          widget: boolean
+        - label: keepEndTags
+          name: keepEndTags
+          required: false
+          widget: boolean
+        - label: keepQuotes
+          name: keepQuotes
+          required: false
+          widget: boolean
+        - label: keepWhitespace
+          name: keepWhitespace
+          required: false
+          widget: boolean
+        label: html
+        name: html
+        required: false
+        widget: object
+      - fields:
+        - label: keepVarNames
+          name: keepVarNames
+          required: false
+          widget: boolean
+        - label: noNullishOperator
+          name: noNullishOperator
+          required: false
+          widget: boolean
+        - hint: Precision number of significant digits to preserve for numbers, 0
+            means no trimming.
+          label: precision
+          name: precision
+          required: false
+          widget: number
+        label: js
+        name: js
+        required: false
+        widget: object
+      - fields:
+        - label: keepNumbers
+          name: keepNumbers
+          required: false
+          widget: boolean
+        - hint: Precision number of significant digits to preserve for numbers, 0
+            means no trimming.
+          label: precision
+          name: precision
+          required: false
+          widget: number
+        label: json
+        name: json
+        required: false
+        widget: object
+      - fields:
+        - label: keepComments
+          name: keepComments
+          required: false
+          widget: boolean
+        - hint: Precision number of significant digits to preserve for numbers, 0
+            means no trimming.
+          label: precision
+          name: precision
+          required: false
+          widget: number
+        label: svg
+        name: svg
+        required: false
+        widget: object
+      - fields:
+        - label: keepWhitespace
+          name: keepWhitespace
+          required: false
+          widget: boolean
+        label: xml
+        name: xml
+        required: false
+        widget: object
+      hint: '[Library Docs](https://github.com/tdewolff/minify#html)'
+      label: tdewolff
+      name: tdewolff
+      required: false
+      widget: object
+    file: config/_default/minify.yml
+    label: Minify
+    name: Minify
+    type: file
+  - delete: false
+    fields:
+    - hint: Merge this configuration object from themes.
+      label: _merge
+      name: _merge
+      options:
+      - label: none - No merge
+        value: none
+      - label: shallow - Adds values for only new keys
+        value: shallow
+      - label: deep - Add values for new keys, and merge existing
+        value: deep
+      required: false
+      widget: select
+    - field_type: list
+      fields:
+      - field_type: string
+        hint: Can be either a valid Go Module module path, e.g. github.com/gohugoio/myShortcodes,
+          or the directory name for the module as stored in your themes folder.
+        label: path
+        name: path
+        required: false
+        widget: string
+      - collapsed: true
+        fields:
+        - field_type: string
+          hint: ""
+          label: source
+          name: source
+          required: false
+          widget: string
+        - field_type: string
+          hint: ""
+          label: target
+          name: target
+          required: false
+          widget: string
+        - field_type: string
+          hint: ""
+          label: lang
+          name: lang
+          required: false
+          widget: string
+        - field_type: string
+          hint: ""
+          label: includeFiles
+          name: includeFiles
+          required: false
+          widget: string
+        - field_type: string
+          hint: ""
+          label: excludeFiles
+          name: excludeFiles
+          required: false
+          widget: string
+        hint: https://gohugo.io/hugo-modules/configuration/#module-config-mounts
+        label: mounts
+        name: mounts
+        required: false
+        widget: list
+      - field_type: boolean
+        label: ignoreConfig
+        name: ignoreConfig
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: ignoreImports
+        name: ignoreImports
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: disable
+        name: disable
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: noMounts
+        name: noMounts
+        required: false
+        widget: boolean
+      - field_type: boolean
+        label: noVendor
+        name: noVendor
+        required: false
+        widget: boolean
+      hint: https://gohugo.io/hugo-modules/configuration/#module-config-imports
+      label: imports
+      name: imports
+      widget: list
+    - collapsed: true
+      fields:
+      - field_type: string
+        hint: ""
+        label: source
+        name: source
+        required: false
+        widget: string
+      - field_type: string
+        hint: ""
+        label: target
+        name: target
+        required: false
+        widget: string
+      - field_type: string
+        hint: ""
+        label: lang
+        name: lang
+        required: false
+        widget: string
+      - field_type: string
+        hint: ""
+        label: includeFiles
+        name: includeFiles
+        required: false
+        widget: string
+      - field_type: string
+        hint: ""
+        label: excludeFiles
+        name: excludeFiles
+        required: false
+        widget: string
+      hint: https://gohugo.io/hugo-modules/configuration/#module-config-mounts
+      label: mounts
+      name: mounts
+      required: false
+      widget: list
+    - collapsed: true
+      field_type: object
+      fields:
+      - field_type: boolean
+        label: extended
+        name: extended
+        required: false
+        widget: boolean
+      - field_type: string
+        hint: Accepts a number for minimum value accepted.
+        label: Min
+        name: min
+        required: false
+        widget: string
+      - field_type: string
+        hint: Accepts a number for maximum value accepted.
+        label: Max
+        name: max
+        required: false
+        widget: string
+      hint: https://gohugo.io/hugo-modules/configuration/#module-config-hugoversion
+      label: hugoVersion
+      name: hugoVersion
+      widget: object
+    - field_type: string
+      hint: Comma separated glob list matching paths that should not use the proxy
+        configured above.
+      label: noProxy
+      name: noProxy
+      required: false
+      widget: string
+    - field_type: string
+      hint: A optional Glob pattern matching module paths to skip when vendoring,
+        e.g. “github.com/**”
+      label: noVendor
+      name: noVendor
+      required: false
+      widget: string
+    - field_type: boolean
+      hint: When enabled, we will pick the vendored module closest to the module using
+        it. The default behaviour is to pick the first. Note that there can still
+        be only one dependency of a given module path, so once it is in use it cannot
+        be redefined.
+      label: vendorClosest
+      name: vendorClosest
+      required: false
+      widget: boolean
+    - field_type: string
+      hint: Comma separated glob list matching paths that should be treated as private.
+      label: private
+      name: private
+      required: false
+      widget: string
+    - field_type: string
+      hint: Defines the proxy server to use to download remote modules. Default is
+        direct, which means “git clone” and similar.
+      label: proxy
+      name: proxy
+      required: false
+      widget: string
+    - field_type: list
+      hint: 'A comma separated (or a slice) list of module path to directory replacement
+        mapping, e.g. github.com/bep/my-theme -> ../..,github.com/bep/shortcodes ->
+        /some/path. This is mostly useful for temporary locally development of a module,
+        and then it makes sense to set it as an OS environment variable, e.g: env
+        HUGO_MODULE_REPLACEMENTS="github.com/bep/my-theme -> ../..". Any relative
+        path is relate to themesDir, and absolute paths are allowed.'
+      label: replacements
+      name: replacements
+      required: false
+      widget: list
+    - field_type: string
+      hint: The workspace file to use. This enables Go workspace mode. Note that this
+        can also be set via OS env, e.g. export HUGO_MODULE_WORKSPACE=/my/hugo.work
+        This only works with Go 1.18+.
+      label: workspace
+      name: workspace
+      required: false
+      widget: string
+    file: config/_default/module.yml
+    label: Module
+    name: Module
+    type: file
+  - delete: false
+    fields:
+    - hint: Merge this configuration object from themes.
+      label: _merge
+      name: _merge
+      options:
+      - label: none - No merge
+        value: none
+      - label: shallow - Adds values for only new keys
+        value: shallow
+      - label: deep - Add values for new keys, and merge existing
+        value: deep
+      required: false
+      widget: select
+    - field_type: object
+      fields:
+      - hint: this must match the Type of a defined media type.
+        name: mediaType
+        required: false
+        widget: string
+      - hint: sub path to save the output files.
+        name: path
+        required: false
+        widget: string
+      - hint: 'the base filename for the list filenames (homepage, etc.). Default:
+          index.'
+        name: baseName
+        required: false
+        widget: string
+      - hint: 'can be used to create rel values in link tags. Default: alternate.'
+        name: rel
+        required: false
+        widget: string
+      - hint: will replace the “http://” or “https://” in your baseURL for this output
+          format.
+        name: protocol
+        required: false
+        widget: string
+      - hint: 'use Go’s plain text templates parser for the templates. Default: false.'
+        name: isPlainText
+        required: false
+        widget: boolean
+      - hint: 'used in situations only relevant for HTML-type formats; e.g., page
+          aliases. Default: false.'
+        name: isHTML
+        required: false
+        widget: boolean
+      - hint: 'used to turn off ugly URLs If uglyURLs is set to true in your site.
+          Default: false.'
+        name: noUgly
+        required: false
+        widget: boolean
+      - hint: 'enable if it doesn’t make sense to include this format in an AlternativeOutputFormats
+          format listing on Page (e.g., with CSS). Note that we use the term alternative
+          and not alternate here, as it does not necessarily replace the other format.
+          Default: false.'
+        name: notAlternative
+        required: false
+        widget: boolean
+      - hint: 'make .Permalink and .RelPermalink return the rendering Output Format
+          rather than main (see below). This is enabled by default for HTML and AMP.
+          Default: false.'
+        name: permalinkable
+        required: false
+        widget: boolean
+      - hint: Setting this to a non-zero value will be used as the first sort criteria.
+        name: weight
+        required: false
+        widget: number
+      name: one
+      required: false
+      summary: '{{mediaType}}'
+      widget: object
+    - field_type: object
+      fields:
+      - hint: this must match the Type of a defined media type.
+        name: mediaType
+        required: false
+        widget: string
+      - hint: sub path to save the output files.
+        name: path
+        required: false
+        widget: string
+      - hint: 'the base filename for the list filenames (homepage, etc.). Default:
+          index.'
+        name: baseName
+        required: false
+        widget: string
+      - hint: 'can be used to create rel values in link tags. Default: alternate.'
+        name: rel
+        required: false
+        widget: string
+      - hint: will replace the “http://” or “https://” in your baseURL for this output
+          format.
+        name: protocol
+        required: false
+        widget: string
+      - hint: 'use Go’s plain text templates parser for the templates. Default: false.'
+        name: isPlainText
+        required: false
+        widget: boolean
+      - hint: 'used in situations only relevant for HTML-type formats; e.g., page
+          aliases. Default: false.'
+        name: isHTML
+        required: false
+        widget: boolean
+      - hint: 'used to turn off ugly URLs If uglyURLs is set to true in your site.
+          Default: false.'
+        name: noUgly
+        required: false
+        widget: boolean
+      - hint: 'enable if it doesn’t make sense to include this format in an AlternativeOutputFormats
+          format listing on Page (e.g., with CSS). Note that we use the term alternative
+          and not alternate here, as it does not necessarily replace the other format.
+          Default: false.'
+        name: notAlternative
+        required: false
+        widget: boolean
+      - hint: 'make .Permalink and .RelPermalink return the rendering Output Format
+          rather than main (see below). This is enabled by default for HTML and AMP.
+          Default: false.'
+        name: permalinkable
+        required: false
+        widget: boolean
+      - hint: Setting this to a non-zero value will be used as the first sort criteria.
+        name: weight
+        required: false
+        widget: number
+      name: two
+      required: false
+      summary: '{{mediaType}}'
+      widget: object
+    file: config/_default/outputFormats.yml
+    label: Outputformats
+    name: Outputformats
+    type: file
+  - delete: false
+    fields:
+    - field_type: text
+      hint: Site description. Used by the opengraph partial.
+      name: description
+      required: false
+      slug: hugo-config-params-description
+      widget: text
+    file: config/_default/params.yml
+    label: Params
+    name: Params
+    type: file
+  - delete: false
+    fields:
+    - label: Root section
+      name: /
+      required: false
+      widget: string
+    file: config/_default/permalinks.yml
+    label: Permalinks
+    name: Permalinks
+    type: file
+  - delete: false
+    fields:
+    - field_type: number
+      hint: A value between 0-100. Lower value will give more, but maybe not so relevant,
+        matches.
+      name: threshold
+      required: false
+      widget: number
+    - field_type: boolean
+      hint: Set to true to include **pages newer than the current page** in the related
+        content listing. This will mean that the output for older posts may change
+        as new related content gets added.
+      name: includeNewer
+      required: false
+      widget: boolean
+    - field_type: boolean
+      hint: Set to true to lower case keywords in both the indexes and the queries.
+        This may give more accurate results at a slight performance penalty. Note
+        that this can also be set per index.
+      name: toLower
+      required: false
+      widget: boolean
+    - field_type: list
+      fields:
+      - field_type: string
+        hint: The index name. This value maps directly to a page param. Hugo supports
+          string values (`author` in the example) and lists (`tags`, `keywords` etc.)
+          and time and date objects.
+        name: name
+        required: false
+        widget: string
+      - field_type: number
+        hint: An integer weight that indicates _how important_ this parameter is relative
+          to the other parameters.  It can be 0, which has the effect of turning this
+          index off, or even negative. Test with different values to see what fits
+          your content best.
+        name: weight
+        widget: number
+      - field_type: string
+        hint: This is currently only relevant for dates. When listing related content,
+          we may want to list content that is also close in time. Setting "2006" (default
+          value for date indexes) as the pattern for a date index will add weight
+          to pages published in the same year. For busier blogs, "200601" (year and
+          month) may be a better default.
+        name: pattern
+        required: false
+        widget: string
+      - field_type: boolean
+        hint: See above.
+        name: toLower
+        required: false
+        widget: boolean
+      name: indices
+      required: false
+      widget: list
+    file: config/_default/related.yml
+    label: Related
+    name: Related
+    type: file
+  - delete: false
+    fields:
+    - hint: Merge this configuration object from themes.
+      label: _merge
+      name: _merge
+      options:
+      - label: none - No merge
+        value: none
+      - label: shallow - Adds values for only new keys
+        value: shallow
+      - label: deep - Add values for new keys, and merge existing
+        value: deep
+      required: false
+      widget: select
+    - field_type: select
+      hint: 'Tells search engines how often to revisit your site''s individual pages. '
+      label: changefreq
+      multiple: false
+      name: changefreq
+      options:
+      - never
+      - yearly
+      - monthly
+      - weekly
+      - daily
+      - hourly
+      - always
+      required: false
+      widget: select
+    - field_type: number
+      label: priority
+      max: 1
+      min: 0
+      name: priority
+      required: false
+      step: 0.1
+      value_type: float
+      widget: number
+    - field_type: string
+      hint: Usually sitemap.xml.
+      label: filename
+      name: filename
+      required: false
+      widget: string
+    file: config/_default/sitemap.yml
+    label: Sitemap
+    name: Sitemap
+    type: file
+  - delete: false
+    fields:
+    - fields:
+      - name: disable
+        required: false
+        widget: boolean
+      name: disqus
+      required: false
+      widget: object
+    - fields:
+      - name: anonymizeIP
+        required: false
+        widget: boolean
+      - name: disable
+        required: false
+        widget: boolean
+      - name: respectDoNotTrack
+        required: false
+        widget: boolean
+      - name: useSessionStorage
+        required: false
+        widget: boolean
+      name: googleAnalytics
+      required: false
+      widget: object
+    - fields:
+      - name: disable
+        required: false
+        widget: boolean
+      - name: simple
+        required: false
+        widget: boolean
+      name: instagram
+      required: false
+      widget: object
+    - fields:
+      - name: disable
+        required: false
+        widget: boolean
+      - name: enableDNT
+        required: false
+        widget: boolean
+      - name: simple
+        required: false
+        widget: boolean
+      name: twitter
+      required: false
+      widget: object
+    - fields:
+      - name: disable
+        required: false
+        widget: boolean
+      - name: enableDNT
+        required: false
+        widget: boolean
+      - name: simple
+        required: false
+        widget: boolean
+      name: vimeo
+      required: false
+      widget: object
+    - fields:
+      - name: disable
+        required: false
+        widget: boolean
+      - name: privacyEnhanced
+        required: false
+        widget: boolean
+      name: youtube
+      required: false
+      widget: object
+    file: config/_default/privacy.yml
+    label: Privacy
+    name: Privacy
+    type: file
+  - delete: false
+    fields:
+    - hint: |
+        [Enable inline shortcodes](https://gohugo.io/templates/shortcode/#inline-shortcodes) in the content. This is a potential security risk, so use with caution.
+      label: Enable Inline Shortcodes
+      name: enableInlineShortcodes
+      required: false
+      widget: boolean
+    - fields:
+      - hint: |
+          - ^dart-sass-embedded$ - ^go$ - ^npx$ - ^postcss$
+        name: allow
+        required: false
+        widget: list
+      - hint: |
+          - (?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$
+        name: osEnv
+        required: false
+        widget: list
+      name: exec
+      required: false
+      widget: object
+    - fields:
+      - hint: |
+          - ^HUGO_
+        name: getenv
+        required: false
+        widget: list
+      name: funcs
+      required: false
+      widget: object
+    - fields:
+      - hint: |
+          - (?i)GET|POST
+        name: methods
+        required: false
+        widget: list
+      - hint: '- .*'
+        name: urls
+        required: false
+        widget: list
+      name: http
+      required: false
+      widget: object
+    file: config/_default/security.yml
+    label: Security
+    name: Security
+    type: file
+  label: Hugo Config Files
+  name: hugo-config-directory
+display_url: /
+logo_url: /img/admin.png
+media_folder: assets/img
+public_folder: img
+site_url: ../../

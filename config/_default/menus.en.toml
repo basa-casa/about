@@ -1,0 +1,43 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "4C/ID Course"
+url = "https://opencollective.com/4cid"
+weight = 1
+
+[[main]]
+name = "CMS Generator"
+url = "https://github.com/basa-casa/admin"
+weight = 2
+
+[[main]]
+name = "Course Template"
+url = "https://github.com/basa-casa/casa"
+weight = 3
+
+# [[main]]
+# name = ""
+# url = ""
+# weight = 4
+
+[[main]]
+weight = 5
+name = "Blog"
+url = "/blog"
+
+# footer menu
+[[footer]]
+name = "About"
+url = "/about"
+weight = 1
+
+[[footer]]
+name = "Elements"
+url = "/elements"
+weight = 2
+
+[[footer]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+weight = 3

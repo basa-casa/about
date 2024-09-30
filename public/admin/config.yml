@@ -1,0 +1,246 @@
+backend:
+  branch: main
+  name: github
+  repo: basa-casa/admin
+collections:
+- collection_type: folder
+  create: true
+  delete: true
+  description: Generates an instance of StaticCMS (scms), at `/admin/{{slug}}` Use
+    this collection to override the module-provided pages admin/content, admin/config,
+    etc.
+  fields:
+  - field_type: string
+    label: Title
+    name: title
+    widget: string
+  - default: https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js
+    field_type: string
+    hint: URL of javascript CMS imported to <script src="{{ .Params.CMS }}"></script>
+    label: CMS
+    name: CMS
+    widget: string
+  - field_type: list
+    fields:
+    - field_type: string
+      hint: enter `collection filename`, i.e. `collection hugo-content-default
+      name: import
+      widget: string
+    - default: import
+      field_type: select
+      label: Collection Type
+      name: collection_type
+      options:
+      - import
+      - folder
+      - files
+      - set
+      widget: hidden
+    - collapsed: true
+      field_type: object
+      fields:
+      - field_type: string
+        label: Name
+        name: name
+        required: false
+        widget: string
+      - field_type: string
+        hint: Label in the editor UI; defaults to the value of name.
+        label: Label
+        name: label
+        required: false
+        widget: string
+      - field_type: text
+        hint: Text displayed below the label when viewing a collection. Useful for
+          adding instructions prior to content creation or editing.
+        label: Description
+        name: description
+        namespace: nc
+        required: false
+        widget: text
+      - field_type: string
+        hint: Enter a path relative to the base of the repository, where all files
+          created with this collection will be stored.
+        label: Folder
+        name: folder
+        required: false
+        widget: string
+      name: extend
+      required: false
+      widget: object
+    hint: Import collections
+    label: Collections
+    label_singular: Collection
+    minimize_collapsed: true
+    name: collections
+    required: true
+    summary: 'import: {{import}}'
+    widget: list
+  - collapsed: true
+    fields:
+    - collapsed: true
+      fields:
+      - label: title
+        name: title
+        required: false
+        widget: string
+      - label: weight
+        name: weight
+        required: false
+        step: 10
+        widget: number
+      - label: url
+        name: url
+        required: false
+        widget: string
+      - label: page Ref
+        name: pageRef
+        required: false
+        widget: string
+      - label: identifier
+        name: identifier
+        required: false
+        widget: string
+      - label: pre
+        name: pre
+        required: false
+        widget: string
+      - label: post
+        name: post
+        required: false
+        widget: string
+      hint: Adds to the navigation menu for /admin pages.
+      label: admin
+      name: admin
+      required: false
+      widget: object
+    hint: https://gohugo.io/variables/menus/#menu-entry-variables
+    label: menu
+    name: menu
+    required: false
+    widget: object
+  - field_type: boolean
+    label: Draft
+    name: draft
+    required: false
+    widget: boolean
+  folder: content/admin
+  format: yaml-frontmatter
+  hide: false
+  identifier_field: title
+  label: Admin Pages
+  label_singular: Admin Page
+  name: admin-pages
+  path: '{{slug}}/index'
+  sortable_fields:
+  - title
+- collection_type: files
+  delete: false
+  description: About Content Base Collection
+  editor: null
+  files:
+  - delete: false
+    editor: null
+    fields:
+    - field_type: string
+      name: title
+      widget: string
+    - field_type: markdown
+      hint: This is the main MD content, printed beneath the frontmatter delimiter
+        in markdown files.
+      name: body
+      required: false
+      slug: hugo-content-body
+      widget: markdown
+    file: content/index.md
+    label: about.basa.casa
+    name: home
+    preview_path: ""
+    type: file
+  hide: false
+  label: about.basa.casa homepage
+  name: about
+  publish: false
+  summary: ""
+- collection_type: folder
+  create: true
+  delete: true
+  description: ""
+  editor: null
+  extension: ""
+  fields:
+  - field_type: string
+    name: title
+    widget: string
+  - field_type: markdown
+    hint: This is the main MD content, printed beneath the frontmatter delimiter in
+      markdown files.
+    name: body
+    required: false
+    slug: hugo-content-body
+    widget: markdown
+  filter: null
+  folder: content
+  format: yaml-frontmatter
+  frontmatter_delimiter: ""
+  hide: false
+  identifier_field: title
+  label: Content section index pages
+  label_singular: Content section index page
+  media_folder: ""
+  name: content-sections
+  nested: null
+  path: '{{slug}}/_index'
+  preview_path: '{{slug}}'
+  preview_path_date_field: ""
+  public_folder: ""
+  publish: false
+  sortable_fields: []
+  summary: ""
+  view_filters: []
+  view_groups: []
+- collection_type: folder
+  create: true
+  delete: false
+  description: Blog posts for Basa Casa
+  extension: md
+  fields:
+  - field_type: string
+    hint: The directory to where scms will write the file, beneath the folder collection's
+      `folder` field.
+    label: Subfolder
+    name: destination
+    required: false
+    widget: string
+  - field_type: string
+    name: title
+    widget: string
+  - field_type: datetime
+    name: date
+    required: false
+    widget: datetime
+  - field_type: boolean
+    label: Draft
+    name: draft
+    required: false
+    widget: boolean
+  - field_type: markdown
+    hint: This is the main MD content, printed beneath the frontmatter delimiter in
+      markdown files.
+    name: body
+    required: false
+    slug: hugo-content-body
+    widget: markdown
+  folder: content/blog
+  format: yaml-frontmatter
+  identifier_field: title
+  label: Blog
+  name: blog
+  path: '{{slug}}/index'
+  preview_path_date_field: ""
+  slug: '{{slug}}'
+display_url: /
+logo_url: /img/admin.png
+media_folder: assets/img
+public_folder: img
+site_url: ../../

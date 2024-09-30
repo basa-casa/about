@@ -1,0 +1,24 @@
+label: about.basa.casa homepage
+name: about
+description: About Content Base Collection
+collection_type: files
+files:
+  - type: file
+    name: home
+    label: about.basa.casa
+    file: content/index.md
+    fields:
+      - field_type: import
+        import: field hugo-content-title
+        extend: null
+      - field_type: import
+        import: field hugo-content-body
+        extend: null
+    delete: false
+    preview_path: ""
+    editor: null
+publish: false
+hide: false
+delete: false
+editor: null
+summary: ""

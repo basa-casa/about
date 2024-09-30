@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About Basa Casa</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on About Basa Casa</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Sep 2024 00:00:00 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test</title>
+      <link>http://localhost:1313/blog/test/</link>
+      <pubDate>Sat, 28 Sep 2024 00:00:00 -0700</pubDate>
+      <guid>http://localhost:1313/blog/test/</guid>
+      <description>&lt;p&gt;123&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The creation of basa-casa/admin</title>
+      <link>http://localhost:1313/blog/creation-basa-casa-admin-cms-generator/</link>
+      <pubDate>Fri, 27 Sep 2024 05:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/creation-basa-casa-admin-cms-generator/</guid>
+      <description>&lt;h2 id=&#34;a-module-story&#34;&gt;A Module Story&lt;/h2&gt;&#xA;&lt;p&gt;One day I discovered NetlifyCMS. I needed something like it at the time, and when configuring it stumbled across the New Dynamic&amp;rsquo;s module for splitting config files with a simple import function during a hugo build. It worked great, and I started creating a CMS that made the CMS, collection, and field files.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Brian MacKinney</title>
+      <link>http://localhost:1313/authors/brian-mackinney/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/authors/brian-mackinney/</guid>
+      <description>&lt;p&gt;Hi! I&amp;rsquo;m an Instructional Designer who recognizes the power of Four-Component Instructional Designs for learning effectiveness, and the powers of GitHub, Hugo, and CMSes for content managment. This is my attempt to combine it all into a school with the best courses possible. I need your help. Will you join me?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Collections</title>
+      <link>http://localhost:1313/admin/collections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/admin/collections/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://staticjscms.netlify.app/docs/collection-overview&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Static CMS Collection Overview&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://staticjscms.netlify.app/docs/collection-types&#34;&#xA;&#xA;&#xA;&#xA;&#xA; target=&#34;_blank&#34;&#xA; &#xA;&#xA;&#xA;&gt;Static CMS Collection Types&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Config</title>
+      <link>http://localhost:1313/admin/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/admin/config/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fields</title>
+      <link>http://localhost:1313/admin/fields/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/admin/fields/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ready to build your next project with Hugo?</title>
+      <link></link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid></guid>
+      <description></description>
+    </item>
+    <item>
+      <title>tests</title>
+      <link>http://localhost:1313/blog/tests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/tests/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>What Users Are Saying About Hugoplate</title>
+      <link></link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid></guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
